@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+    <head>
+        <title>F-courses</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" src="styles.css">
+    
+        <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+        <script type="text/javascript" src="engine1/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+        <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    </head>
+    <style>
+        @font-face {
+            font-family: neue;
+            src: url(fonts/neue.ttf);
+        }
+        body{
+            background-color: #f5f2f2;
+            background-size:cover;
+            margin:0;
+            overflow-x: hidden;
+        }
+        header{
+            display: flex;
+            color:black;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f2f2;
+            height:300px; 
+           
+        }
+        nav{
+            display: flex;
+            flex-direction: row;
+
+        }
+        .logo{
+            margin-right:40%;
+            margin-left: -5%;
+        }
+      
+        
+       
+        .texto{
+            margin-top:6%;
+
+        }
+        .acceso{
+
+                display: flex;
+                flex-direction: row;
+                right:0;        
+                font-family: Tahoma;   
+                justify-content: center;   
+        }
+       div{
+        
+        flex-direction: row;
+       }
+       ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        width:100%;
+        margin-left: -30%;
+        
+       }
+      li{
+        padding:5%;
+        font-size: 40px;
+        font-family: Tahoma;
+        margin-right: 1%;
+       
+
+      }
+      li a{
+
+        text-decoration: none;
+      }
+
+      li a:visited{
+
+        color:rgb(112, 202, 233);
+      }
+       li:hover{
+        background-color: #dbdbdb;
+
+       }
+       .profes{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding:1%;
+       }
+       .profe{
+        width: 200px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        margin: 1%;
+        border-radius: 20px;
+        text-align: center;
+        padding: 3%;
+        font-family: Tahoma;
+
+       }
+       .profe:hover{
+        transform: scale(1.1);
+        box-shadow: 0px 0px 2px black;
+        transition: all 0.5s;
+       }
+       .profe img{
+        border-radius: 80px;
+        box-shadow: 0px 0px 3px black;
+       }
+       .pr{
+        background-color: rgb(112, 202, 233);
+        font-size:15px;
+        font-weight: bold;
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        border-radius: 10px;
+       }
+       .pr:hover{
+        color: black;
+        transition: 0.5s;
+        
+       }
+       h1{
+        font-size: 50px;
+        font-family: Tahoma;
+        margin-left: 2%;
+        color:rgb(112, 202, 233);
+
+       }
+       .cursos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 5%;
+       }
+       .curso{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height:400px;
+        background-color: white;
+        padding:3%;
+        margin:1%;
+        border-radius: 20px;
+        font-family: Tahoma;
+
+       }
+       .curso:hover{
+        transform: scale(1.1);
+        transition: all 0.5s ease-in-out 0s;
+       }
+       .curso img{
+        max-height: 210px;
+        border-radius: 20px;
+       }
+       .curso a:visited{
+        color: black;
+       }
+       .curso a{
+        text-decoration: none;
+
+       }
+       .curso a:hover{
+        text-decoration: underline;
+       }
+       .resenas{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+       }
+       .resena{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width:400px;
+        height:400px;
+        box-shadow:0px 0px 10px;
+        padding:3%;
+        margin:1%;
+        font-family: Tahoma;
+        border-radius: 40px;
+        background-color:rgb(255, 255, 255, 0.5);
+       }
+       .resena:hover{
+        transform: scale(1.08);
+        background-color: rgb(255, 255, 255);
+        transition: all 0.5s;
+
+       }
+       footer{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        font-family: Tahoma;
+        background-color: rgb(241, 241, 241);
+
+        }
+        .cat{
+            display: flex;
+            flex-direction: column;
+            color:black;
+            font-family: Tahoma;
+            font-weight: bold;
+            width:200px;
+            align-items: center;
+            box-shadow: 0px 0px 5px black;
+            border-radius: 20px;
+            background-color: rgb(255, 255, 255, 0.5);
+            
+        }
+        .cat a{
+            text-decoration: none;
+            margin:15%;
+            font-family: neue;
+            font-size: 20px;
+            letter-spacing: 3px;
+        }
+        .cat a:visited{
+            color: black;
+        }
+        .cat a:hover{
+            color:blue;
+        }
+        .logo1{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .cats{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin: 10%;
+            
+
+        }
+        .cat h3{
+            font-size: 30px;
+            font-family: neue;
+        }
+        
+        .copy{
+            display: flex;
+            justify-content: center;
+            align-items: center;     
+            flex-direction: column;          
+        }
+        .rd{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .rd a{
+            margin:50%;
+        }
+        .cat:hover{
+            transform: scale(1.1);
+            background-color:rgb(255, 255, 255);
+            transition: all 0.5s;
+        }
+        .cuads{
+             margin:5%;
+             display: flex;
+             flex-direction: row;
+             flex-wrap: wrap;
+             justify-content: center;
+             align-items: center;
+        }
+        .cuad{
+            width:400px;
+            height:400px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align:center;
+            flex-direction: column;
+        }
+        .cuadr{
+            width:400px;
+            height:400px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align:center;
+            flex-direction: column;
+            padding:10px;
+        }
+        .cuadr img{
+            width:100%;
+            height:auto;
+        }
+        .cuad h3{
+            font-family: neue;
+            font-size: 40px;
+        }
+        .cuad p{
+            font-size: 25px;
+            font-family: Tahoma;
+        }
+        .rd a:hover{
+            transform: scale(1.3);
+            transition: all 0.5s;
+        }
+        .ubi{
+            margin-right: 1%;
+            font-family: neue;
+            font-size: 20px;
+        }
+        .mail{
+            font-family: neue;
+            font-size: 20px;
+        }
+        .tel{
+            font-family: neue;
+            font-size: 20px;
+        }
+        .acceso{
+            margin-top:10%;
+            margin-bottom:5%;
+        }
+        .profes{
+            flex-wrap: wrap;
+        }
+        .cats{
+            flex-wrap: wrap;
+        }
+        .cat a:visited{
+            color:black
+        }
+        .cat a{
+            color: black;
+        }
+        .cat a:hover{
+            color:blue;
+        }
+        nav , .li a{
+            color:rgb(112, 202, 233) ;
+        }
+        footer{
+            flex-wrap: wrap;
+        }
+        @media screen and (max-width:800px)
+        {  body{
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .profe{
+            margin-top: 10%;
+
+        }
+        h1{
+            font-size: 25px;
+        }
+        .cat{
+            margin-bottom:10%;
+        }
+        main, aside, footer, nav, header{
+            height:auto;
+            flex-direction: column;
+        }
+        section{
+            width:100%;
+        }
+        .acceso{
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            margin:20%;
+        }
+        nav, ul{
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            margin-bottom: 5%;
+        }
+        .logo{
+            display: flex;
+            margin: auto;
+        }
+        .link{
+            font-size: 20px;
+        }
+        .profe, .resena , .curso, .cuad{
+            height:auto;
+            width:100%;
+
+        }
+        
+        
+
+    }
+          .link{
+            display: flex;
+            flex-wrap: wrap;
+            margin-left:70%;
+                right:100%;
+             text-decoration: none;
+             color:rgb(112, 202, 233);
+             font-size: 25px;
+          }
+          html {
+    scroll-behavior: smooth;
+}
+li a:visited{
+    color:rgb(112, 202, 233);
+}
+.mail{
+    margin-right:5%;
+}
+.animar {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animar.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.fade-in {
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Transición suave */
+}
+
+.fade-in.visible {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Regresa a su posición original */
+}
+.slide-in {
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateX(-100%); /* Desplazado hacia la izquierda */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Transición suave */
+}
+
+.slide-in.visible {
+    opacity: 1; /* Visible */
+    transform: translateX(0); /* Regresa a su posición original */
+} 
+.slide-in-right {
+    opacity: 0; 
+    transform: translateX(100%); 
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-in-right.visible {
+    opacity: 1; 
+    transform: translateX(0); 
+}
+.cuad:hover, .cuadr:hover{
+    transform: scale(1.1);
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.5s;
+}
+.cats{
+    margin-top: -2px;
+}
+    </style>
+
+        <body>
+
+            <header style="margin-top:-30px ;" class="#ini">
+                <div class="logo">
+                    <a href="index.html"><img src="img/logo/logo.png"></a>
+
+                </div>
+                <div class="acceso">
+                    <div class="ubi">
+                        <img src="img/logo/ubi.png">
+                        <div class="texto"> <p>E.E.U.U, Houston </p>
+                        <p>2451 Shadow View Ln., Houston, United States.</p></div>
+                       
+                    </div>
+                    <div class="mail">
+                        <img src="img/logo/mail.png">
+                        <div class="texto"> <p>Contact</p>
+                        <p>cursosaldm@gmail.com</p></div>
+
+                    </div>
+                    <div class="tel">
+                        <img src="img/logo/tel.png">
+                        <div class="texto"> <p>(+1) 1188388393</p>
+                       
+                    </div>
+
+                    </div>
+                </div>
+            </header>
+
+            <header style="margin-top: 0;">
+                    <nav>
+                        <ul>
+                            <li><a href="#Home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#best-teachers">Teachers</a></li>
+                            <li><a href="#courses">Courses</a></li>
+                            <li><a href="#reviews">Reviews</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+            </header>
+         
+
+            <main>
+
+
+                <section id="Home">
+                  <!-- Start WOWSlider.com BODY section -->
+<div id="wowslider-container1">
+    <div class="ws_images"><ul>
+            <li><img src="data1/images/2.jpg" alt="" title="" id="wows1_0"/></li>
+            <li><a href="http://wowslider.net"><img src="data1/images/3.jpg" alt="wow slider" title="" id="wows1_1"/></a></li>
+            <li><img src="data1/images/1.png" alt="" title="" id="wows1_2"/></li>
+        </ul></div>
+    <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">javascript photo gallery</a> by WOWSlider.com v9.0</div>
+    <div class="ws_shadow"></div>
+    </div>	
+    <script type="text/javascript" src="engine1/wowslider.js"></script>
+    <script type="text/javascript" src="engine1/script.js"></script>
+    <!-- End WOWSlider.com BODY section -->
+
+
+                </section>
+             
+                <aside>
+                    <div id="about" class="about">
+                        <h1>ABOUT >></h1>
+                        <div class="cuads slide-in-right">
+                        
+                            <div class="cuad">
+                                <h3>Quiénes Somos</h3>
+                                <p>En F - Learning, nos especializamos
+                                     en la venta de cursos diseñados para impulsar tu crecimiento personal y profesional.
+                                      Creemos en el poder del aprendizaje y en la importancia de ofrecer contenido de calidad.
+                                </p>
+                            </div>
+                            <div class="cuadr">
+                                <img src="img/slider/s1/1.png">
+                                
+                            </div>
+                              <div class="cuad">
+                                <h3>Nuestra Misión</h3>
+                                <p>Nuestra misión es acercar la educación a todas las personas,
+                                     sin importar su nivel de experiencia. Queremos que cada estudiante adquiera nuevas habilidades de forma accesible, práctica y efectiva.
+                                </p>
+                            </div>
+                            <div class="cuadr">
+                                <img src="img/slider/s1/2.jpg">
+                            </div>
+                         
+                         
+                            <div class="cuadr">
+                                <img src="img/slider/s1/5.jpg">
+                            </div>
+                            <div class="cuad">
+                                <h3>Nuestros Valores</h3>
+                                <p>Nos guiamos por la calidad, la innovación y el compromiso con nuestros estudiantes.
+                                     Creemos que aprender debe ser una experiencia enriquecedora y motivadora.
+
+                                </p>
+                            </div>
+                            <div class="cuadr">
+                                <img src="img/slider/s1/3.jpg">
+                            </div>
+                            <div class="cuad">
+                                <h3>Variedad de Cursos</h3>
+                                <p>Contamos con una amplia selección de cursos en distintas áreas, desde tecnología
+                                     y negocios hasta creatividad y desarrollo personal. Nuestro objetivo es ofrecer formación para todos los intereses y necesidades.
+                                </p>
+                            </div>
+                        
+                       
+                            <div class="cuad">
+                                <h3>Aprende a Tu Ritmo</h3>
+                                <p>Sabemos que cada persona tiene su propio ritmo de aprendizaje,
+                                     por eso ofrecemos cursos flexibles, con acceso 24/7, para que puedas estudiar cuando y donde quieras.
+                                </p>
+                            </div>
+                            <div class="cuadr">
+                                <img src="img/slider/s1/4.jpg">
+                            </div>
+                            <div class="cuad">
+                                <h3>Únete a Nuestra Comunidad</h3>
+                                <p>Formar parte de F - Learning significa acceder a una comunidad de aprendizaje 
+                                    donde compartir experiencias, resolver dudas y avanzar junto a otros estudiantes apasionados por el conocimiento.
+                                </p>
+                            </div>
+                            <div class="cuadr">
+                                <img src="img/slider/s1/6.jpg">
+                            </div>
+                            </div>
+                        
+                    </div>
+
+                </aside>
+                
+
+                <aside id="best-teachers">
+                    <h1>BEST TEACHERS >></h1>
+                   <div class="profes slide-in">
+                    <div class="profe">
+                        <img src="img/profes/1.jpg">
+                        <h2>Ramón Díaz</h2>
+                        <p>Desarrollador web con poderes para hacer páginas impresionantes.
+                             Si ves líneas verdes en su pantalla, no te preocupes… ¡es solo su Matrix personal!
+                        </p>
+                        <a class="pr" href="#">CONTACTO</a>
+
+                    </div>
+                    <div class="profe">
+                        <img src="img/profes/2.jpg">
+                        <h2>Marcela Paz</h2>
+                        <p>
+                            Programadora de día, gamer de noche, y solucionadora de bugs las 24 horas.
+                             Su lema: “Si no funciona, es una característica, no un error.”
+                        </p>
+                        <a class="pr" href="#">CONTACTO</a>
+                    </div>
+                    <div class="profe">
+                        <img src="img/profes/3.jpg">
+                        <h2>Matías Flores </h2>
+                        <p>
+                            Hace que las matemáticas sean más entretenidas que un truco de magia.
+                             ¿Ecuaciones imposibles? Para él,
+                             solo son acertijos esperando ser resueltos.
+                        </p>
+                        <a class="pr" href="#">CONTACTO</a>
+                    </div>
+                    <div class="profe">
+                        <img src="img/profes/4.jpg">
+                        <h2>Constanza Díaz</h2>
+                        <p>
+                            Convierte cada clase en una aventura. Con su energía y sus frases épicas,
+                             en poco tiempo estarás hablando inglés mejor que un actor de Hollywood.                        
+                        </p>
+                             <a class="pr" href="#">CONTACTO</a>
+                            </div>
+
+                   </div>
+
+
+                <a class="link"  href="#"> SEE MORE >></a>
+                  
+                </aside>
+                <aside id="courses">
+                    <h1>COURSES >></h1>
+                    <div class="cursos slide-in-right">
+                        <div class="curso">
+                            <img src="img/curso/web.jpg">
+                            <a href="#"><h2>Creative Writing & Storytelling</h2></a>
+                            <p>Creative Writing & Storytelling: Explore the art of crafting compelling narratives, focusing on character development, plot structure, and literary techniques to enhance your writing skills.</p>
+
+                        </div>
+                        <div class="curso">
+                            <img src="img/curso/2.jpeg">
+                            <a href="#"><h2>Introduction to Psychology</h2></a>
+                            <p>Introduction to Psychology: Gain insights into human behavior, mental processes, and emotional responses, covering key theories, research methods, and applications in everyday life.
+
+                            </p>
+                        </div>
+                        <div class="curso">
+                            <img src="img/curso/3.jpg">
+                            <a href="#"><h2>Artificial Intelligence & Ethics</h2></a>
+                            <p>Artificial Intelligence & Ethics: Delve into the fundamentals of AI, its applications, and the ethical implications surrounding its use, including privacy, bias, and societal impact.
+
+                            </p>
+                        </div>
+                        <div class="curso">
+                            <img src="img/curso/4.jpg">
+                            <a href="#"><h2>Music Production & Sound </h2></a>
+                            <p>Music Production & Sound Design: Learn the techniques of creating and producing music, including recording, mixing, and mastering, while exploring sound design principles for various media.
+
+                            </p>
+                        </div>
+                        <div class="curso">
+                            <img src="img/curso/5.jpg">
+                            <a href="#"><h2>Entrepreneurship & Business Innovation</h2></a>
+                            <p>Entrepreneurship & Business Innovation: Discover how to start and grow a business, focusing on innovative strategies, market analysis, and business planning to turn ideas into reality.
+
+                            </p>
+                        </div>
+                        <div class="curso">
+                            <img src="img/curso/6.jpg">
+                            <a href="#"><h2>Photography & Visual Composition</h2></a>
+                            <p>Photography & Visual Composition: Master the basics of photography, including camera settings, composition techniques, and editing skills to create stunning visual imagery.
+
+                            </p>
+                        </div>
+                        <div class="curso">
+                            <img src="img/curso/7.jpg">
+                            <a href="#"><h2>Fitness & Nutrition Science</h2></a>
+                            <p>Fitness & Nutrition Science: Understand the principles of exercise physiology, nutrition, and wellness, and learn how to create effective fitness and dietary plans for various goals.
+
+                            </p>
+                        </div>
+                        <div class="curso">
+                            <img src="img/curso/8.jpg">
+                            <a href=""><h2>Space Exploration & Astronomy</h2></a>
+                            <p>Space Exploration & Astronomy: Explore the universe's wonders, including celestial bodies, space missions, and the science of astronomy, fostering a deeper appreciation for our cosmos.
+
+                            </p>
+                        </div>
+                        <div class="curso">
+                            <img src="img/curso/9.jpg">
+                            <a href="#"><h2>Sustainable Living &  Science</h2></a>
+                            <p>Sustainable Living & Environmental Science: Investigate sustainable practices and environmental issues, focusing on conservation, renewable energy, and strategies for living in harmony with nature.
+                            </p>
+                        </div>
+                    </div>
+                    </aside>
+                    <a class="link" href="#"> SEE MORE >></a>
+
+                    <aside id="reviews">
+                            <h1>REVIEW >></h1>
+
+                            <div class="resenas slide-in">
+                                <div class="resena">
+                                    <img src="img/profes/6.png">
+                                    <h2>Christian Fernández (<em>5</em> )★★★★★</h2>
+                                    <p>¡Estoy absolutamente impresionado con esta página de cursos! La variedad de cursos disponibles es increíble, y la calidad del contenido es excepcional. La plataforma es fácil de navegar y el proceso de compra es rápido y seguro. Además, la atención al cliente es sobresaliente; respondieron a mis preguntas de inmediato. Gracias a esta página, he podido aprender nuevas habilidades y mejorar en mi carrera. ¡Altamente recomendada!</p>
+                                </div>
+                                <div class="resena">
+                                    <img src="img/profes/7.png">
+                                    <h2>Lautaro Torres (<em>3</em> )★★★☆☆</h2>
+                                    <p>La página de cursos tiene un buen potencial, pero creo que hay margen de mejora. Hay una buena variedad de temas, pero algunos cursos no están tan bien estructurados como esperaba. La plataforma puede ser un poco confusa en algunas partes, y me encontré con algunos problemas técnicos durante mi uso. La atención al cliente fue útil, pero la resolución de mis problemas tomó más tiempo del esperado. Con algunos ajustes, esta podría ser una gran herramienta de aprendizaje.</p>
+                                </div>
+                                <div class="resena">
+                                    <img src="img/profes/8.png">
+                                    <h2>Sofía Gómez (<em>4</em> )★★★★☆</h2>
+                                    <p>Mi experiencia con esta página de cursos ha sido muy positiva. La selección de cursos es amplia y hay algo para todos. La plataforma es bastante intuitiva, aunque podría beneficiarse de algunas mejoras en la interfaz de usuario. La calidad del contenido es buena, y he aprendido mucho. Sin embargo, me gustaría que ofrecieran más recursos adicionales para complementar los cursos. En general, una excelente opción para quienes buscan aprender en línea.</p>
+                                </div>
+
+                            </div>
+                    </aside>
+
+<a class="link" href="#"> SEE MORE >></a>
+
+
+            </main>
+
+            <footer id="contact">
+                <div class="logo1">
+                    <a href="index.html"><img src="img/logo/logo.png"></a>
+
+                </div>
+                <div class="cats slide-in-right">
+                <div class="cat">
+                    <h3>Mapa del Sitio</h3>
+                        <a href="#Home">Home</a>
+                        <a href="#best-teachers">Teachers</a>
+                        <a href="#courses">Courses</a>
+                        <a href="#reviews">Reviews</a>
+                    
+                </div>
+                <div class="cat">
+                    <h3>Notice</h3>
+                    
+                    <a href="#">Offers(soon)</a>
+                    <a href="#">Asignments(soon)</a>
+                    <a href="#">Jobs(soon)</a>
+                </div>
+                <div class="cat">
+                    <h3>Contact</h3>
+                    <a href="#">Correo</a>
+                    <a href="#">Whatsapp</a>                   
+                    <a href="#">Doubts</a>
+                    <a href="#">support</a>
+                </div>
+                <div class="cat">
+                    <h3>Redes Sociales</h3>
+                    <div class="rd">
+                    <a href="https://www.instagram.com/facumz__/?hl=es" target="_blank"> <img src="img/rd/instagram.png"></a>
+                    <a href="https://x.com/facumz__" target="_blank"><img src="img/rd/gorjeo.png"></a>
+                    <a href="https://www.linkedin.com/in/facundo-martinez-80176533b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="img/rd/linkedin.png"></a>
+                    <a href="#"><img src="img/rd/facebook.png"></a></div>
+                  
+                </div>
+            </div>
+            <div class="copy">
+                <h3>Derechos reservados al Creador de esta Página</h3>
+                <p>Facundo Martínez Copyright 2025 ©</p>
+            </div>
+         
+            </footer>
+            <script>// Selecciona todos los elementos que deseas animar
+                const elements = document.querySelectorAll('.animar');
+                
+                window.addEventListener('scroll', () => {
+                    const scrollPosition = window.scrollY + window.innerHeight;
+                
+                    elements.forEach(element => {
+                        if (element.getBoundingClientRect().top < scrollPosition) {
+                            element.classList.add('visible');
+                        }
+                    });
+                });
+                
+
+                // Selecciona todos los elementos que deseas animar
+const fadeElements = document.querySelectorAll('.fade-in');
+
+const checkFade = () => {
+    const triggerBottom = window.innerHeight / 5 * 4; // Ajusta el punto de activación
+
+    fadeElements.forEach(element => {
+        const boxTop = element.getBoundingClientRect().top;
+
+        if (boxTop < triggerBottom) {
+            element.classList.add('visible');
+        } else {
+            element.classList.remove('visible');
+        }
+    });
+};
+
+// Ejecuta la función al hacer scroll
+window.addEventListener('scroll', checkFade);
+
+// Ejecuta la función al cargar la página
+window.addEventListener('load', checkFade);
+// Selecciona todos los elementos que deseas animar
+const slideElements = document.querySelectorAll('.slide-in');
+
+const checkSlide = () => {
+    const triggerBottom = window.innerHeight / 5 * 4; // Ajusta el punto de activación
+
+    slideElements.forEach(element => {
+        const boxTop = element.getBoundingClientRect().top;
+
+        if (boxTop < triggerBottom) {
+            element.classList.add('visible');
+        } else {
+            element.classList.remove('visible');
+        }
+    });
+};
+
+// Ejecuta la función al hacer scroll
+window.addEventListener('scroll', checkSlide);
+
+// Ejecuta la función al cargar la página
+window.addEventListener('load', checkSlide);
+// Selecciona todos los elementos que deseas animar
+const slideRightElements = document.querySelectorAll('.slide-in-right');
+
+const checkSlideRight = () => {
+    const triggerBottom = window.innerHeight / 5 * 4; // Ajusta el punto de activación
+
+    slideRightElements.forEach(element => {
+        const boxTop = element.getBoundingClientRect().top;
+
+        if (boxTop < triggerBottom) {
+            element.classList.add('visible');
+        } else {
+            element.classList.remove('visible');
+        }
+    });
+};
+
+// Ejecuta la función al hacer scroll
+window.addEventListener('scroll', checkSlideRight);
+
+// Ejecuta la función al cargar la página
+window.addEventListener('load', checkSlideRight);
+                </script>
+        </body>
+</html>
